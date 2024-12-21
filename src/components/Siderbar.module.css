@@ -32,8 +32,6 @@
 }
 
 .avatar{
-  box-sizing: initial;
-
   width: calc(4rem + 10px);
   height: calc(4rem + 10px);
   border-radius: 8px;
