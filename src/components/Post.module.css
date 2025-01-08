@@ -1,11 +1,3 @@
-.author{
-
-}
-
-.authorInfo{
-
-}
-
 .Post{
   background: var(--gray-600);
   border-radius: 8px;
@@ -13,7 +5,7 @@
   margin-bottom: 2.5rem;
 }
 
-.post + .post {
+.Post + .Post {
   margin-top: 2rem;
 }
 
@@ -44,19 +36,17 @@ justify-content: space-between;
   color: var(--gray-400);
 }
 
+time{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
 .author {
   display: flex;
   align-items: center;
   gap: 1rem ;
-}
-
-.author img{ 
-  width: calc(4rem + 10px);
-  height: calc(4rem + 10px);
-  border-radius: 8px;
-  border: 2px solid var(--green-500);
-  outline: 2px solid var(--gray-800) ;
-
 }
 
 .authorInfo strong{
