@@ -19,6 +19,8 @@ export function Post({ author, publishedAt, content }) {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity('')
+
     setNewCommentText(event.target.value)
   }
 
@@ -29,6 +31,11 @@ export function Post({ author, publishedAt, content }) {
 
     setComments(commentsWithoutDeletedOne)
   }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity('Esse campo é obrigatório')
+  }
+  const isNewCommentEmpty = newCommentText == 0
 
   return (
     <article className={styles.Post}>
@@ -68,10 +75,14 @@ export function Post({ author, publishedAt, content }) {
           name="comment"
           placeholder="Deixe um comentário"
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required // no react quando uma propriedade não é declarada e for de false or true, ela sempre retorna true.
         />
 
         <footer>
-          <button type="submit">Comentar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Comentar
+          </button>
         </footer>
       </form>
       <div className={styles.commentList}>
